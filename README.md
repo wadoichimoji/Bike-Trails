@@ -17,5 +17,4 @@ Welcome to bike trails. Bike trails is a app designed for bikers to discover new
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Google Oauth](https://developers.google.com/identity/protocols/oauth2)
-- [Google Fonts](https://fonts.google.com/)
 
