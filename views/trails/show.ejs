@@ -1,0 +1,67 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Location: </div>
+  <div><%= trail.location %></div>
+  <div>terrain: </div>
+  <div><%= trail.terrain %></div>
+ 
+ 
+</section>
+
+
+
+
+<br><br>
+<h2>Reviews</h2>
+
+<% if(user) { %>
+  <form id="add-review-form" method="POST" action="/trails/<%= trail._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+   
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
+<% } %>
+
+<% if (trail.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Review</th>
+        
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% trail.reviews.forEach(function(r) { %>
+        
+        <tr>
+          <td class="review-user"><img alt="" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+         
+          <td>
+            <% if (user && user._id.equals(r.user)) { %>
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <!-- <td><strong><%= (total / trail.reviews.length).toFixed(1) %></strong></td> -->
+      </tr>
+    </tbody>
+  </table>
+  
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+

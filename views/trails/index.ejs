@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<img class="backImage" src="https://images.unsplash.com/photo-1506316940527-4d1c138978a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW4lMjBiaWtlfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+<table id="list">
+  <h1 class=" header">Discover New Bike Trails</h1>
+  <thead>
+    <tr>
+       <th><h3>Location</h3></th>
+       <th><h3>Terrain</h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% trails.forEach(function(m) { %>
+      <tr>
+        <td ><%= m.location %></td>
+        <td><%= m.terrain %></td>
+        <% if(user) { %>
+        <td><a href="/trails/<%= m._id %>">reviews</a></td>
+        <td><a href="/trails/<%= m._id %>/edit">edit</a></td>
+        <% } %>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>

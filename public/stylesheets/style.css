@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #212525;
+}
+
+body {
+  margin: 0;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  background-image: linear-gradient(to right, white, rgb(34, 26, 186));
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > img {
+  width: 70px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+/* body > main h1:first-child {
+  margin-bottom: 50px;
+} */
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover:not(.active) {
+  font-family: FoundersGrotesk-Bold;
+    font-weight: 700;
+    background-image: linear-gradient(135deg,rgb(245, 222, 222),rgb(255, 255, 255) 100%,transparent 50.1%);
+   
+}
+
+nav > a.active {
+  
+  cursor: default;
+  
+}
+
+#new-form {
+  display: inline;
+  margin-left: 30%;
+  margin-top: 10%;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+.header {
+  color: rgb(34, 26, 186);
+  text-align: center;
+  font-size: 3em;
+}
+
+.backImage{
+   max-width:100%;
+   height:auto
+}
+
+/* .list {
+  display: flex;
+  padding-left: 20%;
+} */
+
+.a{
+  background-color: lightblue;
+  border-color: transparent;
+}
+
+/* tr {
+  font-size: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 10px;
+} */
+
+#show-page div:nth-child(odd) {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+}
+#show-page div:nth-child(even){
+  margin-left: 50%;
+  padding: 1%;
+}
+
+body {
+  background-color: rgb(232, 244, 236);
+  
+}
+
+h3 {
+  color:rgb(74, 73, 73);
+  margin-right: 100%;
+}
